@@ -58,15 +58,16 @@ function get_menu(items, promotions) {
             if(elem.name === item.name) {
             total_price -= elem.count * item.price;//优惠后的价格
             total_promotion += elem.count * item.price;   //优惠的价格
-            menu_middle += '名称：'+ elem.name + '，数量：' + elem.count + item.unit + '\n' ;
+            menu_middle += "名称：" + elem.name + "，数量：" + elem.count + elem.unit + "\n";
             }
         });
-        menu_top += '名称：'+ item.name + '，数量：' + item.count + item.unit + '，单价：' + item.price. toFixed(2)+'(元)，' +
-            '小计：' + total_price.toFixed(2) +  '(元)\n' ;
+        menu_top +=  "名称：" + item.name + "，数量：" + item.count
+            + item.unit + "，单价：" + item.price.toFixed(2) + "(元)，小计：" + total_price.toFixed(2) + "(元)\n";
         total += total_price;
 
     });
-    total_str = '总计：' + total .toFixed(2)+ '(元)\n' + '节省：' + total_promotion.toFixed(2) + '(元) \n';
+     total_str =  "总计：" + total.toFixed(2) + "(元)\n" +
+        "节省：" + total_promotion.toFixed(2) + "(元)\n";
     let menu = menu_top +'----------------------\n'+ menu_middle +'----------------------\n'+ total_str +
         '**********************';
     return menu;
